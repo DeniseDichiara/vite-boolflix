@@ -8,5 +8,5 @@ import AppMain from './components/AppMain.vue'
   <AppMain />
 </template>
 
-<style>
+<style lang="scss">
 </style>

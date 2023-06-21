@@ -2,7 +2,7 @@
     <div>
         <lable for="film-search"></lable>
         <select name="film-search" id="film-search" v-model="selectedFilm">
-            <option v-for="" value="">
+            <option value="">
 
             </option>
 

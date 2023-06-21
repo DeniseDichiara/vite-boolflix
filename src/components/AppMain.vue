@@ -22,8 +22,8 @@ export default {
         }
     },
     components: {
-        FilmList,
-        FilmSearchbar
+        FilmSearchbar,
+        FilmList
     }
 }
 </script>

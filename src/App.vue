@@ -9,4 +9,5 @@ import AppMain from './components/AppMain.vue'
 </template>
 
 <style lang="scss">
+  @import './styles/general.scss';
 </style>

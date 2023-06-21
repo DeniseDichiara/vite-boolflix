@@ -3,13 +3,16 @@
         <h1>
             Main
         </h1>
+        <FilmSearchbar />
         <FilmList />
     </main>
 </template>
 
 
 <script>
+import FilmSearchbar from './FilmSearchbar.vue';
 import FilmList from './FilmList.vue';
+
 
 export default {
     name: 'AppMain',
@@ -19,7 +22,8 @@ export default {
         }
     },
     components: {
-        FilmList
+        FilmList,
+        FilmSearchbar
     }
 }
 </script>

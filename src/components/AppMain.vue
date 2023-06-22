@@ -4,7 +4,7 @@
             <!--?  MAIN   -->
         </h1>
         <FilmSearchbar @searched="getFilm" />
-        <FilmList />
+        <FilmList :film="filmList"/>
     </main>
 </template>
 

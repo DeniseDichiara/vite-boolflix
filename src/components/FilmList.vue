@@ -14,6 +14,11 @@ import FilmCard from './FilmCard.vue';
 
 export default {
     name: 'FilmList',
+    props: {
+        film : Array 
+
+    },
+
     data() {
         return {
         }

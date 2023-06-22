@@ -1,6 +1,6 @@
 <template>
     <h3>
-        FilmCard
+        <!--!  FILM LIST   -->
     </h3>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
     <h1>
-        Header 
+        Wellcome to Boolflix !
     </h1>
 </template>
 
@@ -15,6 +15,10 @@ export default {
 }
 </script>
 
-<style lang="scss">
-    
+<style lang="scss" scoped>
+    h1{
+        padding-top: 2rem;
+        color: white;
+        background-color: deepskyblue;
+    }
 </style>

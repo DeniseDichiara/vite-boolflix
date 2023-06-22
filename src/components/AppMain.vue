@@ -3,7 +3,7 @@
         <h1>
             <!--?  MAIN   -->
         </h1>
-        <FilmSearchbar />
+        <FilmSearchbar @searched="log"/>
         <FilmList />
     </main>
 </template>
@@ -28,9 +28,17 @@ export default {
     },
 
     methods: {
-
+        getFilm() {
+            axios.get('')
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+        },
     },
-    
+
     created(){
 
     },

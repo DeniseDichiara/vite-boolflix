@@ -2,7 +2,7 @@
     <div>
         <input type="text" name="film-search" id="film-search"
         v-model="selectedFilm" >
-        <button @click="">search</button>
+        <button @click="$emit('searched' , selectedFilm)">search</button>
     </div>
 </template>
 
@@ -20,15 +20,6 @@ export default {
     },
 
     methods: {
-        getFilm() {
-            axios.get('')
-                .then(function (response) {
-                    console.log(response);
-                })
-                .catch(function (error) {
-                    console.log(error);
-                })
-        }
     },
 
     created() {

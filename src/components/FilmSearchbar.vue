@@ -1,12 +1,7 @@
 <template>
     <div>
-        <lable for="film-search"></lable>
-        <select name="film-search" id="film-search" v-model="selectedFilm">
-            <option value="">
-
-            </option>
-
-        </select>
+        <input type="text" name="film-search" id="film-search">
+        <button>search</button>
     </div>
 </template>
 
@@ -29,7 +24,6 @@ export default {
                     console.log(response);
                 })
                 .catch(function (error) {
-                    // handle error
                     console.log(error);
                 })
         }

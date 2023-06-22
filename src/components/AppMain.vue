@@ -12,7 +12,7 @@
 <script>
 import FilmSearchbar from './FilmSearchbar.vue';
 import FilmList from './FilmList.vue';
-
+import axios from 'axios';
 
 export default {
     name: 'AppMain',
@@ -35,12 +35,12 @@ export default {
                 })
                 .catch(function (error) {
                     console.log(error);
-                })
+                });
         },
     },
 
     created(){
-
+        this.getFilm();
     },
 }
 </script>

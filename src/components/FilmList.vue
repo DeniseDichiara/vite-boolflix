@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2>
-            <!--todo  FILM LIST   -->
+            Film List
         </h2>
         <FilmCard />
     </div>

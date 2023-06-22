@@ -8,7 +8,6 @@
 
 
 <script>
-import axios from 'axios';
 
 export default {
     name: 'FilmSearchbar',
@@ -23,7 +22,7 @@ export default {
     },
 
     created() {
-        this.getFilm();
+        
     }
 }
 </script>

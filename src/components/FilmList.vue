@@ -2,16 +2,16 @@
     <div>
         <article v-for="movie in film">
             <h2>
-                {{ film.title }}
+                {{ movie.title }}
             </h2>
 
             <h4>
-                {{ film.original_title }}
+                {{ movie.original_title }}
             </h4>
 
             <p>
-                {{ film.original_language }}
-                {{ film.vote_average }}
+                {{ movie.original_language }}
+                {{ movie.vote_average }}
             </p>
 
         </article>

@@ -1,8 +1,20 @@
 <template>
     <div>
-        <h2>
-            Film List
-        </h2>
+        <article v-for="film in films">
+            <h2>
+                {{ film.title }}
+            </h2>
+
+            <h4>
+                {{ film.original_title }}
+            </h4>
+
+            <p>
+                {{ film.original_language }}
+                {{ film.vote_average }}
+            </p>
+
+        </article>
         <FilmCard />
     </div>
 </template>

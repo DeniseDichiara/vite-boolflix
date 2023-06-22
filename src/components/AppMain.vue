@@ -3,7 +3,7 @@
         <h1>
             <!--?  MAIN   -->
         </h1>
-        <FilmSearchbar @searched="log"/>
+        <FilmSearchbar @searched="getFilm" />
         <FilmList />
     </main>
 </template>
@@ -18,7 +18,8 @@ export default {
     name: 'AppMain',
     data() {
         return {
-
+            filmApiUrl : ' https://api.themoviedb.org/3/search/movie',
+            filmList: [],
         }
     },
 
@@ -28,10 +29,16 @@ export default {
     },
 
     methods: {
-        getFilm() {
-            axios.get('')
-                .then(function (response) {
-                    console.log(response);
+        getFilm(selectedFilm) {
+            axios.get(this.filmApiUrl, {
+                params: {
+                    api_key: '8b75441ea555f4e83337de05866ffe82',
+                    query:selectedFilm,
+                }
+            })
+                .then((response) => {
+                    console.log(response.data.results);
+                    this.filmList = response.data.results;
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -39,7 +46,7 @@ export default {
         },
     },
 
-    created(){
+    created() {
         this.getFilm();
     },
 }

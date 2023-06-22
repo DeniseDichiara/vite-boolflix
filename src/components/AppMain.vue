@@ -33,7 +33,7 @@ export default {
             axios.get(this.filmApiUrl, {
                 params: {
                     api_key: '8b75441ea555f4e83337de05866ffe82',
-                    query:selectedFilm,
+                    query : selectedFilm,
                 }
             })
                 .then((response) => {

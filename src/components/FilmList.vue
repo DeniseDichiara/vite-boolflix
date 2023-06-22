@@ -1,6 +1,6 @@
 <template>
     <div>
-        <article v-for="film in films">
+        <article v-for="movie in film">
             <h2>
                 {{ film.title }}
             </h2>

@@ -1,7 +1,8 @@
 <template>
     <div>
-        <input type="text" name="film-search" id="film-search">
-        <button>search</button>
+        <input type="text" name="film-search" id="film-search"
+        v-model="selectedFilm" >
+        <button @click="">search</button>
     </div>
 </template>
 
@@ -11,6 +12,7 @@ import axios from 'axios';
 
 export default {
     name: 'FilmSearchbar',
+
     data() {
         return {
             selectedFilm: ''

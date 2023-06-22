@@ -17,7 +17,7 @@ export default {
 
 <style lang="scss" scoped>
     h1{
-        padding-top: 2rem;
+        padding: 2rem 0;
         color: white;
         background-color: deepskyblue;
     }

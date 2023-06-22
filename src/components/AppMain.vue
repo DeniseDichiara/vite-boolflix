@@ -21,10 +21,19 @@ export default {
 
         }
     },
+
     components: {
         FilmSearchbar,
         FilmList
-    }
+    },
+
+    methods: {
+
+    },
+    
+    created(){
+
+    },
 }
 </script>
 

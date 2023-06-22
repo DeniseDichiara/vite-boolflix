@@ -10,10 +10,14 @@
             </h4>
 
             <p>
-                Lang: {{ movie.original_language }};
+                lang: {{ movie.original_language }} ;
                 vote: {{ movie.vote_average }}
+
             </p>
+
+            
             <div>---</div>
+            
 
         </article>
         <FilmCard />

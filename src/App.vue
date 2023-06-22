@@ -4,8 +4,8 @@ import AppMain from './components/AppMain.vue';
 
 export default {
   name: 'App',
-  data(){
-    return{
+  data() {
+    return {
     }
   },
   components: {
@@ -22,6 +22,6 @@ export default {
 </template>
 
 <style lang="scss">
-  @import 'bootstrap/scss/bootstrap';
-  @import './styles/general.scss';
+@import 'bootstrap/scss/bootstrap';
+@import './styles/general.scss';
 </style>

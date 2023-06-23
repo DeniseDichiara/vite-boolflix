@@ -3,7 +3,7 @@
         <h1>
             <!--?  MAIN   -->
         </h1>
-        <FilmSearchbar @searched="getFilm" />
+        <FilmSearchbar @searched="newSearch" />
         <FilmList :film="filmList"/>
     </main>
 </template>
@@ -33,6 +33,12 @@ export default {
     },
 
     methods: {
+
+        newSearch(selectedFilm){
+            this.getFilm(selectedFilm);
+            this.getSeries(selectedFilm);
+        },
+
         getFilm(selectedFilm) {
             axios.get(this.filmApiUrl, {
                 params: {
@@ -51,7 +57,7 @@ export default {
 
 //*! GET SERIES
         getSeries(selectedFilm) {
-            axios.get(this.filmApiUrl, {
+            axios.get(this.seriesApiUrl, {
                 params: {
                     api_key: '8b75441ea555f4e83337de05866ffe82',
                     query : selectedFilm,
@@ -59,7 +65,7 @@ export default {
             })
                 .then((response) => {
                     console.log(response.data.results);
-                    this.filmList = response.data.results;
+                    this.seriesList = response.data.results;
                 })
                 .catch(function (error) {
                     console.log(error);

@@ -2,7 +2,7 @@
     <div>
         <article v-for="movie in film">
             <h2>
-                {{ movie.title }}
+                {{ movie.title ? movie.title : movie.name}}
             </h2>
 
             <h4>

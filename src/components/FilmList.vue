@@ -9,15 +9,18 @@
                 {{ movie.original_title }}
             </h4>
 
+            <img v-if="languageFlagFilm(movie.original_language)" :src="getImagePath(movie.original_language)" alt="langua flag">
+            <span v-else>
+                {{ movie.original_language }}
+            </span>
+
+            <!--*Ternary operator to verify if languageFlagFilm is available-->
+            <!--lang: {{ languageFlagFilm(movie.original_language) ? }} -->
+
             <p>
-                <!--*Ternary operator to verify if languageFlagFilm is available-->
-                lang: {{ languageFlagFilm(movie.original_language) ? }} 
-
                 vote: {{ movie.vote_average }}
-
             </p>
 
-            
             <div>---</div>
             
 
@@ -42,7 +45,7 @@ export default {
 
     // The followong method will check if language flag is present 
         languageFlagFilm(flagName){
-            if ( this.availableLanguages.includes(flagName)){
+            if ( this.availableLanguages.includes(flagName+'.png')){
                 return true
             }
             return false;
@@ -50,7 +53,7 @@ export default {
 
         // method for dynamic path
         getImagePath(imgSource){
-            return new URL ('../public/img/${imgSource}', import.meta.url).href;
+            return new URL ('../public/img/${imgSource}.png', import.meta.url).href;
         }
     },
 

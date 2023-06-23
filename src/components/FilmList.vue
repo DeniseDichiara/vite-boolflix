@@ -9,7 +9,8 @@
                 {{ movie.original_title }}
             </h4>
 
-            <img v-if="languageFlagFilm(movie.original_language)" :src="getImagePath(movie.original_language)" alt="langua flag">
+            <img v-if="languageFlagFilm(movie.original_language)" :src="getImagePath(movie.original_language)" alt="Language flag"
+            class="img-flag">
             <span v-else>
                 {{ movie.original_language }}
             </span>
@@ -69,5 +70,7 @@ export default {
 
 
 <style lang="scss">
-    
+    .img-flag{
+        width: 40px;
+    }
 </style>

@@ -14,9 +14,6 @@
                 {{ movie.original_language }}
             </span>
 
-            <!--*Ternary operator to verify if languageFlagFilm is available-->
-            <!--lang: {{ languageFlagFilm(movie.original_language) ? }} -->
-
             <p>
                 vote: {{ movie.vote_average }}
             </p>
@@ -53,13 +50,12 @@ export default {
 
         // method for dynamic path
         getImagePath(imgSource){
-            return new URL ('../public/img/${imgSource}.png', import.meta.url).href;
+            return new URL ('../assets/img/${imgSource}.png', import.meta.url).href;
         }
     },
 
     data() {
         return {
-            //currentLanguage: 'null',
             availableLanguages: [
                 'it.png', 'en.png', 'fr.png', 'ja.png', 'es.png', 'pt.png'
             ],

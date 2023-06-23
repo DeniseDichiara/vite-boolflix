@@ -10,13 +10,8 @@
             </h4>
 
             <p>
-                lang: {{ movie.original_language }} 
-                {{ currentLanguage }}
-                
-                <img src="/img/en.png">
-                <img src="/img/fr.png">
-                <img src="/img/ja.png">
-                <img src="/img/pt.png">
+                <!--*Ternary operator to verify if languageFlagFilm is available-->
+                lang: {{ languageFlagFilm(movie.original_language) ? }} 
 
                 vote: {{ movie.vote_average }}
 
@@ -45,11 +40,23 @@ export default {
 
     methods: {
 
+    // The followong method will check if language flag is present 
+        languageFlagFilm(flagName){
+            if ( this.availableLanguages.includes(flagName)){
+                return true
+            }
+            return false;
+        },
+
+        // method for dynamic path
+        getImagePath(imgSource){
+            return new URL ('../public/img/${imgSource}', import.meta.url).href;
+        }
     },
 
     data() {
         return {
-            currentLanguage: 'null',
+            //currentLanguage: 'null',
             availableLanguages: [
                 'it.png', 'en.png', 'fr.png', 'ja.png', 'es.png', 'pt.png'
             ],

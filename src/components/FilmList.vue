@@ -50,7 +50,7 @@ export default {
 
         // method for dynamic path
         getImagePath(imgSource){
-            return new URL ('../assets/img/${imgSource}.png', import.meta.url).href;
+            return new URL (`../assets/img/${imgSource}.png`, import.meta.url).href;
         }
     },
 

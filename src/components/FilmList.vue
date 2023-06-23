@@ -1,6 +1,6 @@
 <template>
     <div>
-        <article v-for="movie in film">
+        <article v-for="movie in film" :movie="movie" :title="movie.original_title ? movie.original_title : movie.name">
             <h2>
                 {{ movie.title ? movie.title : movie.name}}
             </h2>

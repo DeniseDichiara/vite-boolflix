@@ -1,6 +1,6 @@
 <template>
     <h1>
-        Wellcome to Boolflix !
+        Boolflix
     </h1>
 </template>
 
@@ -18,7 +18,7 @@ export default {
 <style lang="scss" scoped>
     h1{
         padding: 2rem 0;
-        color: white;
-        background-color: deepskyblue;
+        color: red;
+        background-color: black;
     }
 </style>

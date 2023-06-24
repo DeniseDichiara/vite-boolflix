@@ -1,21 +1,19 @@
 <template>
-    <h3>
-        <!--!  FILM LIST   -->
-    </h3>
+        <article class="card mb-3 col-4">
+            <img src="..." class="card-img-top" alt="Poster Image">
+        </article>
 </template>
 
 
 <script>
 export default {
     name: 'FilmCard',
-    data(){
-        return{
+    data() {
+        return {
         }
     }
 }
 </script>
 
 
-<style lang="scss">
-    
-</style>
+<style lang="scss"></style>

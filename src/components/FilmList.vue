@@ -1,38 +1,38 @@
 <template>
-    <div>
-        <article v-for="movie in film" 
-        :movie="movie" 
-        :title="movie.original_title ? movie.original_title : movie.name"
-        :image="movie.poster_path"
-        >
+    <div class="container">
+        <div class="row p-5">
+            <div class="col-12">
+                <article v-for="movie in film" :movie="movie"
+                    :title="movie.original_title ? movie.original_title : movie.name" :image="movie.poster_path">
 
-            <h2>
-                {{ movie.title ? movie.title : movie.name }}
-            </h2>
+                    <h2>
+                        {{ movie.title ? movie.title : movie.name }}
+                    </h2>
 
-            <h4>
-                {{ movie.original_title }}
-            </h4>
+                    <h4>
+                        {{ movie.original_title }}
+                    </h4>
 
-            
-            <div>
-                <img :src="image" alt="Poster Image">
+
+                    <div>
+                        <img :src="image" alt="Poster Image">
+                    </div>
+
+                    <img v-if="languageFlagFilm(movie.original_language)" :src="getImagePath(movie.original_language)"
+                        alt="Language flag" class="img-flag">
+                    <span v-else>
+                        {{ movie.original_language }}
+                    </span>
+
+                    <p>
+                        vote: {{ movie.vote_average }}
+                    </p>
+
+                    <div>---</div>
+                </article>
             </div>
+        </div>
 
-            <img v-if="languageFlagFilm(movie.original_language)" :src="getImagePath(movie.original_language)"
-                alt="Language flag" class="img-flag">
-                <span v-else>
-                    {{ movie.original_language }}
-                </span>
-
-                <p>
-                    vote: {{ movie.vote_average }}
-                </p>
-
-                <div>---</div>
-
-
-        </article>
         <FilmCard />
     </div>
 </template>
@@ -40,7 +40,6 @@
 
 <script>
 import FilmCard from './FilmCard.vue';
-
 
 export default {
     name: 'FilmList',
@@ -77,6 +76,22 @@ export default {
     },
     components: {
         FilmCard
+    },
+
+    created(){
+        axios.get(this.seriesApiUrl, {
+                params: {
+                    api_key: '8b75441ea555f4e83337de05866ffe82',
+                    query : selectedFilm,
+                }
+            })
+                .then((response) => {
+                    console.log(response.data.results);
+                    this.seriesList = response.data.results;
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
     }
 }
 </script>

@@ -9,6 +9,10 @@
                 {{ movie.original_title }}
             </h4>
 
+            <div>
+                <img  :src="movie.poster_path" alt="Poster Image">
+            </div>
+
             <img v-if="languageFlagFilm(movie.original_language)" :src="getImagePath(movie.original_language)" alt="Language flag"
             class="img-flag">
             <span v-else>
@@ -52,7 +56,10 @@ export default {
         // method for dynamic path
         getImagePath(imgSource){
             return new URL (`../assets/img/${imgSource}.png`, import.meta.url).href;
-        }
+        },
+
+
+
     },
 
     data() {
@@ -72,5 +79,8 @@ export default {
 <style lang="scss">
     .img-flag{
         width: 40px;
+        margin-bottom: .5rem;
+        margin-top: 1rem;
     }
+
 </style>

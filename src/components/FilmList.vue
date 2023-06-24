@@ -1,30 +1,36 @@
 <template>
     <div>
-        <article v-for="movie in film" :movie="movie" :title="movie.original_title ? movie.original_title : movie.name">
+        <article v-for="movie in film" 
+        :movie="movie" 
+        :title="movie.original_title ? movie.original_title : movie.name"
+        :image="movie.poster_path"
+        >
+
             <h2>
-                {{ movie.title ? movie.title : movie.name}}
+                {{ movie.title ? movie.title : movie.name }}
             </h2>
 
             <h4>
                 {{ movie.original_title }}
             </h4>
 
+            
             <div>
-                <img  :src="movie.poster_path" alt="Poster Image">
+                <img :src="image" alt="Poster Image">
             </div>
 
-            <img v-if="languageFlagFilm(movie.original_language)" :src="getImagePath(movie.original_language)" alt="Language flag"
-            class="img-flag">
-            <span v-else>
-                {{ movie.original_language }}
-            </span>
+            <img v-if="languageFlagFilm(movie.original_language)" :src="getImagePath(movie.original_language)"
+                alt="Language flag" class="img-flag">
+                <span v-else>
+                    {{ movie.original_language }}
+                </span>
 
-            <p>
-                vote: {{ movie.vote_average }}
-            </p>
+                <p>
+                    vote: {{ movie.vote_average }}
+                </p>
 
-            <div>---</div>
-            
+                <div>---</div>
+
 
         </article>
         <FilmCard />
@@ -39,23 +45,23 @@ import FilmCard from './FilmCard.vue';
 export default {
     name: 'FilmList',
     props: {
-        film : Array 
+        film: Array
 
     },
 
     methods: {
 
-    // The followong method will check if language flag is present 
-        languageFlagFilm(flagName){
-            if ( this.availableLanguages.includes(flagName+'.png')){
+        // The followong method will check if language flag is present 
+        languageFlagFilm(flagName) {
+            if (this.availableLanguages.includes(flagName + '.png')) {
                 return true
             }
             return false;
         },
 
         // method for dynamic path
-        getImagePath(imgSource){
-            return new URL (`../assets/img/${imgSource}.png`, import.meta.url).href;
+        getImagePath(imgSource) {
+            return new URL(`../assets/img/${imgSource}.png`, import.meta.url).href;
         },
 
 
@@ -77,10 +83,9 @@ export default {
 
 
 <style lang="scss">
-    .img-flag{
-        width: 40px;
-        margin-bottom: .5rem;
-        margin-top: 1rem;
-    }
-
+.img-flag {
+    width: 40px;
+    margin-bottom: .5rem;
+    margin-top: 1rem;
+}
 </style>
